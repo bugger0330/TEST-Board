@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tenco.blog.board.repository.BoardRepository">
+  
+	<insert id="save" parameterType="com.tenco.blog.board.entity.Board">
+		insert into board_test(title, content, username)
+		values(
+			#{title},
+			#{content},
+			#{username}
+		);
+	</insert>
+	
+	<select id="select" resultType="com.tenco.blog.board.entity.Board">
+		select * from board_test where id = #{id};
+	</select>
+	
+	<select id="selectList" resultType="com.tenco.blog.board.entity.Board">
+		select * from board_test;
+	</select>
+	
+
+	<delete id="delete" parameterType="Integer">
+		delete from board_test where id = #{id};
+	</delete>
+	
+	<update id="update" parameterType="com.tenco.blog.board.entity.Board">
+		update board_test set
+			title = #{title},
+			content = #{content}
+		where id = #{id};
+	</update>
+
+</mapper>

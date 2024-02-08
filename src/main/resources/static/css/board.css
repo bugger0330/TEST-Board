@@ -1,0 +1,81 @@
+.main{
+	display: flex;
+	flex-direction: column;
+}
+
+.header{
+	height: 18px;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	background-color: gray;
+}
+
+.menu{
+	width: 100px;
+	margin-right: 5px;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+	font-size: 20px;
+}
+
+table{
+	width: 1000px;
+	margin: 100px auto;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.btn-box{
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 180px;
+}
+
+th{
+	font-size: 20px;
+	padding: 10px 0;
+}
+
+tbody tr td{
+	padding: 10px 0;
+}
+
+button{
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+.delete-btn{
+	background-color: red;
+	color: white;
+}
+
+.update-btn{
+	background-color: yellow;
+}
+
+.insert-btn{
+	background-color: skyblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
