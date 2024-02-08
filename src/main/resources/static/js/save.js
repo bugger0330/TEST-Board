@@ -5,7 +5,7 @@ const userBox = document.querySelector(".username");
 
 load();
 function load(){
-	if(username == null){
+	if(username == ""){
 		alert("로그인이 필요한 서비스입니다.");
 		location.href = "/signin";
 	}
@@ -22,6 +22,17 @@ btn.onclick = () => {
 		content.focus();
 		return;
 	}
+	
+	if(inputs.value.length > 20){
+		alert("제목과 내용은 20자를 넘어갈 수 없습니다.");
+		inputs.focus();
+		return;
+	}else if(content.value.length > 20){
+		alert("제목과 내용은 20자를 넘어갈 수 없습니다.");
+		content.focus();
+		return;
+	}
+
 	$.ajax({
 		type : "post",
 		url : "/board/save",

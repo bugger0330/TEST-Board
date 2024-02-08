@@ -2,21 +2,17 @@ const tbody = document.querySelector("tbody");
 const insertBtn = document.querySelector(".insert-btn");
 
 insertBtn.onclick = () => {
-	if(username == null){
+	if(username == ""){
 		alert("로그인이 필요한 서비스입니다.");
 		location.href = "/signin";
+	}else{
+		location.href = "/board/saveForm";
 	}
-	location.href = "/board/saveForm";
 }
 
 load();
 
 function load(){
-	if(username == null){
-		alert("로그인이 필요한 서비스입니다.");
-		location.href = "/signin";
-	}
-	
 	$.ajax({
 		type : "get",
 		url : "/board/select/list",
@@ -38,7 +34,7 @@ function selectBoard(data){
 					<td>${data[i].id}</td>
 					<td>${data[i].title}</td>
 					<td>${data[i].content}</td>
-					<td>${username}</td>
+					<td>${data[i].username}</td>
 					<td>
 						<button type="button" class="delete-btn" id="${data[i].id}">삭제</button>
 						<button type="button" class="update-btn" id="${data[i].id}">수정</button>
@@ -83,7 +79,7 @@ function updateEvent(btns){
 	if(btns != null){
 		for(let i = 0; i < btns.length; i++){
 			btns[i].onclick = () => {
-				if(username == null){
+				if(username == ""){
 					alert("로그인이 필요한 서비스입니다.");
 					location.href = "/signin";
 				}

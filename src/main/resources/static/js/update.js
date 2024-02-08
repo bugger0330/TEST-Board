@@ -7,7 +7,7 @@ console.log("페이지번호", pageNum);
 
 load();
 function load(){
-	if(username == null){
+	if(username == ""){
 		alert("로그인이 필요한 서비스입니다.");
 		location.href = "/signin";
 	}
